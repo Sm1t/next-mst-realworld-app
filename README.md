@@ -1,3 +1,22 @@
+# react-mst-realworld-app
+Real world application built with React and mobx-state-tree  
+
+Тn this project I'm going to try some features that interest me:
+
+- eslint + prettier
+- husky + commitlint + lint-staged
+- i18n
+- a11y
+- dark mode
+- ssr?
+- pwa?
+- tests
+- storybook?
+- css critical path
+- dynamic imports
+- new React API’s (suspense, hooks, etc.)
+- mobx-state-tree
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
