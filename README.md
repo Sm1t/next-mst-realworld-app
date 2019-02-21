@@ -1,7 +1,7 @@
 # react-mst-realworld-app
 Real world application built with React and mobx-state-tree  
 
-Тn this project I'm going to try some features that interest me:
+In this project I'm going to try some features that interest me:
 
 - eslint + prettier
 - husky + commitlint + lint-staged
