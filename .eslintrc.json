@@ -1,13 +1,15 @@
 {
+  "env": {
+    "jest": true
+  },
+  "parser": "babel-eslint",
   "extends": [
     "prettier",
     "airbnb-base",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended"
   ],
-  "plugins": [
-    "react", "jsx-a11y"
-  ],
+  "plugins": ["react", "jsx-a11y"],
   "rules": {
     "import/order": [
       "error",
@@ -15,7 +17,9 @@
         "newlines-between": "always"
       }
     ],
-    "eol-last": "off"
+    "eol-last": "off",
+    "lines-between-class-members": "off",
+    "newline-after-var": "error"
   },
   "settings": {
     "react": {
@@ -25,13 +29,10 @@
       "flowVersion": "0.53"
     },
     "propWrapperFunctions": [
-        "forbidExtraProps",
-        {"property": "freeze", "object": "Object"},
-        {"property": "myFavoriteWrapper"}
+      "forbidExtraProps",
+      { "property": "freeze", "object": "Object" },
+      { "property": "myFavoriteWrapper" }
     ],
-    "linkComponents": [
-      "Hyperlink",
-      {"name": "Link", "linkAttribute": "to"}
-    ]
+    "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }]
   }
 }
