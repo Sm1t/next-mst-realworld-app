@@ -19,7 +19,8 @@
     ],
     "eol-last": "off",
     "lines-between-class-members": "off",
-    "newline-after-var": "error"
+    "newline-after-var": "error",
+    "no-param-reassign": "off"
   },
   "settings": {
     "react": {
