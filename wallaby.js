@@ -1,5 +1,5 @@
 module.exports = wallaby => ({
-  files: ['src/**/*.js', '!src/**/*.test.js'],
+  files: ['src/**/*.js', 'src/**/*.snap', '!src/**/*.test.js'],
 
   tests: ['src/**/*.test.js'],
 

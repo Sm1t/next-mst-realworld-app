@@ -8,23 +8,25 @@ In this project I'm going to try some features that interest me:
 - i18n
 - a11y
 - dark mode
-- ssr?
+- ssr
 - pwa?
 - tests
 - storybook?
-- css critical path
+- css critical path?
 - dynamic imports
 - new React API’s (suspense, hooks, etc.)
 - mobx-state-tree
 
-This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
+## Conventional Commits
 
-Find the most recent version of this guide at [here](https://github.com/segmentio/create-next-app/blob/master/lib/templates/default/README.md). And check out [Next.js repo](https://github.com/zeit/next.js) for the most up-to-date info.
-
-## Questions? Feedback?
-
-Check out [Next.js FAQ & docs](https://github.com/zeit/next.js#faq) or [let us know](https://github.com/segmentio/create-next-app/issues) your feedback.
-
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing or correcting existing tests
+- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
 
 ## Available Scripts
 
