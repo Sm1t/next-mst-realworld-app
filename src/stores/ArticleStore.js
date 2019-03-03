@@ -14,12 +14,12 @@ export const Article = types
     },
   }));
 
-export const ArticleList = types
+export const ArticleStore = types
   .model({
-    items: types.optional(types.array(Article), []),
+    articles: types.optional(types.array(Article), []),
   })
   .actions(self => ({
     add(item) {
-      self = self.items.push(item);
+      self = self.articles.push(item);
     },
   }));

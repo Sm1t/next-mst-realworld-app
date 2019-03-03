@@ -1,6 +1,6 @@
 import { getSnapshot, onSnapshot } from 'mobx-state-tree';
 
-import { Article, ArticleList } from './Article';
+import { Article, ArticleStore } from './ArticleStore';
 
 const articleData = {
   title: 'Hello MST',
@@ -27,25 +27,25 @@ describe('models', () => {
 
   describe('ArticleList', () => {
     it('should create an empty list when items is not passed', () => {
-      const articleList = ArticleList.create();
+      const articleList = ArticleStore.create();
 
       expect(getSnapshot(articleList)).toMatchSnapshot();
     });
 
     it('should create a list of articles', () => {
-      const articleList = ArticleList.create({ items: [articleData] });
+      const articleList = ArticleStore.create({ items: [articleData] });
 
       expect(getSnapshot(articleList)).toMatchSnapshot();
     });
 
     it('should properly add new article', () => {
-      const articleList = ArticleList.create();
+      const store = ArticleStore.create();
       const states = [];
 
-      onSnapshot(articleList, snapshot => states.push(snapshot));
+      onSnapshot(store, snapshot => states.push(snapshot));
 
-      expect(getSnapshot(articleList)).toMatchSnapshot();
-      articleList.add(articleData);
+      expect(getSnapshot(store)).toMatchSnapshot();
+      store.add(articleData);
       expect(states).toMatchSnapshot();
     });
   });
