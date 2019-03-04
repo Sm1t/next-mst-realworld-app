@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`models Article should properly create article 1`] = `
+Object {
+  "content": "Nice to meet you!",
+  "title": "Hello MST",
+}
+`;
+
+exports[`models Article should properly set article fields 1`] = `
+Object {
+  "content": "Lorem ipsum dolor sit amet",
+  "title": "Lorem",
+}
+`;
+
+exports[`models ArticleList should create a list of articles 1`] = `
+Object {
+  "articles": Array [],
+}
+`;
+
+exports[`models ArticleList should create an empty list when items is not passed 1`] = `
+Object {
+  "articles": Array [],
+}
+`;
+
+exports[`models ArticleList should properly add new article 1`] = `
+Object {
+  "articles": Array [],
+}
+`;
+
+exports[`models ArticleList should properly add new article 2`] = `
+Array [
+  Object {
+    "articles": Array [
+      Object {
+        "content": "Nice to meet you!",
+        "title": "Hello MST",
+      },
+    ],
+  },
+]
+`;

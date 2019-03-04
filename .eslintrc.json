@@ -22,7 +22,8 @@
     "lines-between-class-members": "off",
     "newline-after-var": "error",
     "no-param-reassign": "off",
-    "no-confusing-arrow": "off"
+    "no-confusing-arrow": "off",
+    "arrow-parens": ["error", "as-needed"]
   },
   "settings": {
     "react": {

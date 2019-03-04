@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modelOf should return properly error when value for prop is invalid 1`] = `"Invalid value for prop store"`;
+
+exports[`modelOf with isRequired should return properly error when missing required prop 1`] = `"Missing prop store in props"`;
