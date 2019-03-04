@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject(stores => ({ articleStore: stores.articleStore }))
+@inject('articleStore')
 @observer
 class Articles extends Component {
   render() {
