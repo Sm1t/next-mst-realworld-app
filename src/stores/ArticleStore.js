@@ -1,4 +1,5 @@
-import { types } from 'mobx-state-tree';
+import { types, flow } from 'mobx-state-tree';
+import axios from 'axios';
 
 export const Article = types
   .model({
@@ -18,8 +19,25 @@ export const ArticleStore = types
   .model({
     articles: types.optional(types.array(Article), []),
   })
-  .actions(self => ({
-    add(item) {
+  .actions(self => {
+    function add(item) {
       self = self.articles.push(item);
-    },
-  }));
+    }
+
+    const loadArticles = flow(function* loadArticles() {
+      try {
+        const {
+          data: { articles },
+        } = yield axios.get('https://conduit.productionready.io/api/articles/');
+
+        self.articles = articles.map(({ title, body }) => ({ title, content: body }));
+      } catch (err) {
+        console.error('Failed to load articles ', err);
+      }
+    });
+
+    return {
+      add,
+      loadArticles,
+    };
+  });
