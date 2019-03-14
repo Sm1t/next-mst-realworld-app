@@ -1,7 +1,0 @@
-{
-  "linters": {
-    "*.js": ["eslint", "git add"],
-    "*.css": "stylelint",
-    "*.scss": "stylelint --syntax=scss"
-  }
-}

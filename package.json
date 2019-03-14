@@ -54,5 +54,18 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": ["eslint", "git add"],
+      "*.css": "stylelint",
+      "*.scss": "stylelint --syntax=scss"
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }
