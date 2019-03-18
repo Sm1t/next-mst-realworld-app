@@ -1,5 +1,6 @@
 import { types, flow } from 'mobx-state-tree';
-import axios from 'axios';
+
+import { ArticleService } from '../api';
 
 export const Article = types
   .model({
@@ -28,9 +29,12 @@ export const ArticleStore = types
       try {
         const {
           data: { articles },
-        } = yield axios.get('https://conduit.productionready.io/api/articles/');
+        } = yield ArticleService.all();
 
-        self.articles = articles.map(({ title, body }) => ({ title, content: body }));
+        self.articles = articles.map(({ title, body }) => ({
+          title,
+          content: body,
+        }));
       } catch (err) {
         console.error('Failed to load articles ', err);
       }

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import Articles from '../components/Articles';
+import ArticleList from '../components/ArticleList';
 
-const Index = () => (
-  <div>
-    <Articles />
-  </div>
-);
+class Index extends Component {
+  static async getInitialProps(ctx, { articleStore }) {
+    await articleStore.loadArticles();
+  }
+
+  render() {
+    return (
+      <ArticleList />
+    );
+  }
+}
 
 export default Index;

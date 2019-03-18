@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject('articleStore')
+@inject(stores => ({ articles: stores.articleStore.articles }))
 @observer
 class Articles extends Component {
   render() {
-    const {
-      articleStore: { articles }, // eslint-disable-line react/prop-types
-    } = this.props;
+    const { articles } = this.props;
 
     return (
       articles.length > 0 && (

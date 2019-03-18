@@ -9,12 +9,7 @@ const Store = types
     articleStore: types.optional(ArticleStore, {
       articles: [],
     }),
-  })
-  .actions(self => ({
-    afterCreate() {
-      self.articleStore.loadArticles();
-    },
-  }));
+  });
 
 export function initializeStore(isServer, snapshot = null) {
   if (isServer) {

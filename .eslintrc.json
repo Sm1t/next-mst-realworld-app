@@ -23,7 +23,9 @@
     "newline-after-var": "error",
     "no-param-reassign": "off",
     "no-confusing-arrow": "off",
-    "arrow-parens": ["error", "as-needed"]
+    "arrow-parens": ["error", "as-needed"],
+    "react/prop-types": "off",
+    "class-methods-use-this": "off"
   },
   "settings": {
     "react": {
