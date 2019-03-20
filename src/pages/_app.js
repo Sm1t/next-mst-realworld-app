@@ -4,6 +4,7 @@ import { getSnapshot } from 'mobx-state-tree';
 import App, { Container } from 'next/app';
 
 import { initializeStore } from '../stores';
+import { Layout } from '../layout';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -41,7 +42,9 @@ export default class MyApp extends App {
     return (
       <Container>
         <Provider {...this.stores}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </Container>
     );
