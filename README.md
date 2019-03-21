@@ -1,34 +1,36 @@
-# react-mst-realworld-app
-Real world application built with React and mobx-state-tree  
+# ![RealWorld Example App](logo.png)
 
-In this project I'm going to try some features that interest me:
+> ### React + MST + Next.js codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
-- eslint + prettier
-- husky + commitlint + lint-staged
-- i18n
-- a11y
-- dark mode
-- ssr
-- pwa?
-- tests
-- storybook?
-- css critical path?
-- dynamic imports
-- new React API’s (suspense, hooks, etc.)
-- mobx-state-tree
 
-## Conventional Commits
+### [Demo](https://github.com/gothinkster/realworld)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
 
-- **feat**: A new feature
-- **fix**: A bug fix
-- **docs**: Documentation only changes
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **perf**: A code change that improves performance
-- **test**: Adding missing or correcting existing tests
-- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
 
-## Available Scripts
+This codebase was created to demonstrate a fully fledged fullstack application built with **React + MST + Next.js** including CRUD operations, authentication, routing, pagination, and more.
+
+We've gone to great lengths to adhere to the **React** community styleguides & best practices.
+
+For more information on how to this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
+
+
+# How it works
+This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
+
+All the source files were moved to src folder, so path to the src was added to npm scripts.
+
+Routing in Next.js is based on the file system, so ./src/pages/index.js maps to the / route and ./src/pages/about.js would map to /about.
+
+Mobx state tree implementation based on [MobX State Tree example](https://github.com/zeit/next.js/tree/master/examples/with-mobx-state-tree).
+
+### Making requests to the backend API
+
+For convenience, we have a live API server running at https://conduit.productionready.io/api for the application to make requests against. You can view [the API spec here](https://github.com/GoThinkster/productionready/blob/master/api) which contains all routes & responses for the server.
+
+The source code for the backend server (available for Node, Rails and Django) can be found in the [main RealWorld repo](https://github.com/gothinkster/realworld).
+
+If you want to change the API URL to a local server, simply edit `src/api/index.js` and change `axios.defaults.baseURL` to the local server's URL (i.e. `http://localhost:3000/api`)
+
+# Getting started
 
 In the project directory, you can run:
 
