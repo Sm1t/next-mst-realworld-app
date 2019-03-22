@@ -6,6 +6,7 @@
     "@babel/runtime": "^7.3.4",
     "@babel/runtime-corejs2": "^7.3.4",
     "axios": "^0.18.0",
+    "express": "^4.16.4",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "mobx-state-tree": "^3.10.2",
@@ -15,9 +16,9 @@
     "react-dom": "16.8.3"
   },
   "scripts": {
-    "dev": "next ./src",
-    "build": "next build ./src",
-    "start": "next start ./src",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
     "test": "jest"
   },
   "browserslist": [

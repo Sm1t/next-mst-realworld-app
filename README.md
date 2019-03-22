@@ -16,7 +16,7 @@ For more information on how to this works with other frontends/backends, head ov
 # How it works
 This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
 
-All the source files were moved to src folder, so path to the src was added to npm scripts.
+All source files were moved to the src folder.
 
 Routing in Next.js is based on the file system, so ./src/pages/index.js maps to the / route and ./src/pages/about.js would map to /about.
 
