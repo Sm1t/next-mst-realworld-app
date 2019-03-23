@@ -3,7 +3,7 @@ import { Provider } from 'mobx-react';
 import { getSnapshot } from 'mobx-state-tree';
 import App, { Container } from 'next/app';
 
-import { initializeStore } from '../stores';
+import { initializeStore } from '../store';
 import { Layout } from '../layout';
 
 export default class MyApp extends App {

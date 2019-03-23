@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`models Article should properly create article 1`] = `
+Object {
+  "author": Object {
+    "bio": null,
+    "following": false,
+    "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+    "username": "memas",
+  },
+  "body": "Longer text",
+  "createdAt": "2016-12-16T10:57:00.990Z",
+  "description": "Desc",
+  "favorited": false,
+  "favoritesCount": 1,
+  "slug": "test1",
+  "tagList": Array [],
+  "title": "Test1",
+  "updatedAt": "2016-12-16T10:57:00.990Z",
+}
+`;
+
+exports[`models Article should properly set article fields 1`] = `
+Object {
+  "author": Object {
+    "bio": null,
+    "following": false,
+    "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+    "username": "memas",
+  },
+  "body": "Longer text",
+  "createdAt": "2016-12-16T10:57:00.990Z",
+  "description": "Desc",
+  "favorited": false,
+  "favoritesCount": 1,
+  "slug": "test1",
+  "tagList": Array [],
+  "title": "Lorem",
+  "updatedAt": "2016-12-16T10:57:00.990Z",
+}
+`;
+
+exports[`models ArticleList should create a list of articles 1`] = `
+Object {
+  "articles": Array [],
+}
+`;
+
+exports[`models ArticleList should create an empty list when items is not passed 1`] = `
+Object {
+  "articles": Array [],
+}
+`;
+
+exports[`models ArticleList should properly add new article 1`] = `
+Object {
+  "articles": Array [],
+}
+`;
+
+exports[`models ArticleList should properly add new article 2`] = `
+Array [
+  Object {
+    "articles": Array [
+      Object {
+        "author": Object {
+          "bio": null,
+          "following": false,
+          "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+          "username": "memas",
+        },
+        "body": "Longer text",
+        "createdAt": "2016-12-16T10:57:00.990Z",
+        "description": "Desc",
+        "favorited": false,
+        "favoritesCount": 1,
+        "slug": "test1",
+        "tagList": Array [],
+        "title": "Test1",
+        "updatedAt": "2016-12-16T10:57:00.990Z",
+      },
+    ],
+  },
+]
+`;

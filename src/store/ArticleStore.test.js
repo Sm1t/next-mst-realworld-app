@@ -3,8 +3,21 @@ import { getSnapshot, onSnapshot } from 'mobx-state-tree';
 import { Article, ArticleStore } from './ArticleStore';
 
 const articleData = {
-  title: 'Hello MST',
-  content: 'Nice to meet you!',
+  title: 'Test1',
+  slug: 'test1',
+  body: 'Longer text',
+  createdAt: '2016-12-16T10:57:00.990Z',
+  updatedAt: '2016-12-16T10:57:00.990Z',
+  tagList: [],
+  description: 'Desc',
+  author: {
+    username: 'memas',
+    bio: null,
+    image: 'https://static.productionready.io/images/smiley-cyrus.jpg',
+    following: false,
+  },
+  favorited: false,
+  favoritesCount: 1,
 };
 
 describe('models', () => {
