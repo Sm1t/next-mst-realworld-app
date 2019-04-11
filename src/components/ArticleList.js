@@ -11,11 +11,11 @@ class Articles extends Component {
 
     return (
       articles.length > 0 && (
-        <ul>
+        <div>
           {articles.map(article => (
             <ArticlePreview {...article} key={article.slug} />
           ))}
-        </ul>
+        </div>
       )
     );
   }

@@ -9,7 +9,20 @@ class Index extends Component {
 
   render() {
     return (
-      <ArticleList />
+      <div className="home-page">
+        <div className="container page">
+          <div className="row">
+            <div className="col-md-9">
+              <ArticleList />
+            </div>
+            <div className="col-md-3">
+              <div className="sidebar">
+                <p>Popular tags</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
