@@ -1,6 +1,7 @@
 import { types, applySnapshot } from 'mobx-state-tree';
 
 import { ArticleStore } from './ArticleStore';
+import { UserStore } from './UserStore';
 
 let stores = null;
 
@@ -8,6 +9,9 @@ const Store = types
   .model({
     articleStore: types.optional(ArticleStore, {
       articles: [],
+    }),
+    userStore: types.optional(UserStore, {
+      currentUser: null,
     }),
   });
 
