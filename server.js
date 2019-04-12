@@ -11,6 +11,14 @@ app
     const server = express();
 
     server.use('/static', express.static('public'));
+
+    server.get('/article/:slug', (req, res) => {
+      const actualPage = '/article';
+      const queryParams = { slug: req.params.slug };
+
+      app.render(req, res, actualPage, queryParams);
+    });
+
     server.get('*', (req, res) => handle(req, res));
     server.listen(3000, err => {
       if (err) throw err;

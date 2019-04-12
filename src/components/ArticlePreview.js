@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Link from './Link';
+
 const ArticlePreview = ({
-  author, createdAt, favoritesCount, title, description,
+  author, createdAt, favoritesCount, title, description, slug,
 }) => (
   <div className="article-preview">
     <div className="article-meta">
@@ -18,11 +20,11 @@ const ArticlePreview = ({
         <i className="ion-heart" /> {favoritesCount}
       </button>
     </div>
-    <a href="/" className="preview-link">
+    <Link href={`/article?slug=${slug}`} as={`/article/${slug}`} className="preview-link">
       <h1>{title}</h1>
       <p>{description}</p>
       <span>Read more...</span>
-    </a>
+    </Link>
   </div>
 );
 
