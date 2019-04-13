@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject } from 'mobx-react';
 
 import { ArticleService } from '../api/article.service';
+import formatDate from '../utils/formatDate';
 
 @inject(stores => ({ currentUser: stores.userStore.currentUser }))
 class Article extends Component {
@@ -17,6 +18,8 @@ class Article extends Component {
       title,
       body,
       favoritesCount,
+      createdAt,
+      tagList,
       author: { username, image },
       currentUser,
     } = this.props;
@@ -35,7 +38,7 @@ class Article extends Component {
                 <a href="/" className="author">
                   {username}
                 </a>
-                <span className="date">January 20th</span>
+                <span className="date">{formatDate(createdAt)}</span>
               </div>
               <button className="btn btn-sm btn-outline-secondary">
                 <i className="ion-plus-round" />
@@ -58,7 +61,11 @@ class Article extends Component {
           </div>
 
           <ul className="tag-list">
-
+            {tagList.length > 0 && tagList.map((tag, index) => (
+              <li key={index} className="tag-default tag-pill tag-outline">
+                {tag}
+              </li>
+            ))}
           </ul>
 
           <hr />
@@ -72,7 +79,7 @@ class Article extends Component {
                 <a href="/" className="author">
                   {username}
                 </a>
-                <span className="date">January 20th</span>
+                <span className="date">{formatDate(createdAt)}</span>
               </div>
               <button className="btn btn-sm btn-outline-secondary">
                 <i className="ion-plus-round" />
