@@ -11,19 +11,19 @@ describe('ArticleService', () => {
   it('should fetch articles', async () => {
     const articles = [{ ...article }];
 
-    axios.get.mockResolvedValue({ data: articles });
+    axios.get.mockResolvedValue({ data: { articles } });
 
     const res = await ArticleService.all();
 
-    expect(res.data).toEqual(articles);
+    expect(res).toEqual(articles);
   });
 
   it('should fetch article by slug', async () => {
-    axios.get.mockResolvedValue({ data: { ...article } });
+    axios.get.mockResolvedValue({ data: { article } });
 
     const res = await ArticleService.get('lorem');
 
     expect(axios.get).toHaveBeenCalledWith(`/${ARTICLES}/lorem`);
-    expect(res.data).toEqual(article);
+    expect(res).toEqual(article);
   });
 });

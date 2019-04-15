@@ -42,9 +42,7 @@ export const ArticleStore = types
 
     const loadArticles = flow(function* loadArticles() {
       try {
-        const {
-          data: { articles },
-        } = yield ArticleService.all();
+        const articles = yield ArticleService.all();
 
         self.articles = articles;
       } catch (err) {
