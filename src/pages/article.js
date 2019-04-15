@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { inject } from 'mobx-react';
+import marked from 'marked';
 
 import { ArticleService } from '../api/article.service';
 import TagList from '../components/TagList';
@@ -9,9 +10,9 @@ import formatDate from '../utils/formatDate';
 class Article extends Component {
   static getInitialProps = async context => {
     const { slug } = context.query;
-    const res = await ArticleService.get(slug);
+    const article = await ArticleService.get(slug);
 
-    return { ...res.data.article };
+    return article;
   };
 
   render() {
@@ -24,6 +25,7 @@ class Article extends Component {
       author: { username, image },
       currentUser,
     } = this.props;
+    const markup = { __html: marked(body, { sanitize: true }) };
 
     return (
       <div className="article-page">
@@ -57,11 +59,10 @@ class Article extends Component {
         <div className="container page">
           <div className="row article-content">
             <div className="col-md-12">
-              <p>{body}</p>
+              <div dangerouslySetInnerHTML={markup} />
+              <TagList tags={tagList} outline />
             </div>
           </div>
-
-          <TagList tags={tagList} outline />
 
           <hr />
 
