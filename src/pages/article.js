@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject } from 'mobx-react';
 
 import { ArticleService } from '../api/article.service';
+import TagList from '../components/TagList';
 import formatDate from '../utils/formatDate';
 
 @inject(stores => ({ currentUser: stores.userStore.currentUser }))
@@ -60,13 +61,7 @@ class Article extends Component {
             </div>
           </div>
 
-          <ul className="tag-list">
-            {tagList.length > 0 && tagList.map((tag, index) => (
-              <li key={index} className="tag-default tag-pill tag-outline">
-                {tag}
-              </li>
-            ))}
-          </ul>
+          <TagList tags={tagList} outline />
 
           <hr />
 

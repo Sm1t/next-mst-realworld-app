@@ -25,7 +25,8 @@
     "no-confusing-arrow": "off",
     "arrow-parens": ["error", "as-needed"],
     "react/prop-types": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "operator-linebreak": "off"
   },
   "settings": {
     "react": {
