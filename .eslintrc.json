@@ -26,7 +26,8 @@
     "arrow-parens": ["error", "as-needed"],
     "react/prop-types": "off",
     "class-methods-use-this": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "max-len": ["error", {"code": 80, "ignoreUrls": true}]
   },
   "settings": {
     "react": {

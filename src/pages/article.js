@@ -50,7 +50,8 @@ class Article extends Component {
               &nbsp;&nbsp;
               <button className="btn btn-sm btn-outline-primary">
                 <i className="ion-heart" />
-                &nbsp; Favorite Post <span className="counter">{favoritesCount}</span>
+                &nbsp; Favorite Post&nbsp;
+                <span className="counter">{favoritesCount}</span>
               </button>
             </div>
           </div>
@@ -84,7 +85,8 @@ class Article extends Component {
               &nbsp;
               <button className="btn btn-sm btn-outline-primary">
                 <i className="ion-heart" />
-                &nbsp; Favorite Post <span className="counter">{favoritesCount}</span>
+                &nbsp; Favorite Post&nbsp;
+                <span className="counter">{favoritesCount}</span>
               </button>
             </div>
           </div>
@@ -122,8 +124,8 @@ class Article extends Component {
               {/* <div className="card">
                 <div className="card-block">
                   <p className="card-text">
-                    With supporting text below as a natural lead-in to additional
-                    content.
+                    With supporting text below as a natural lead-in to
+                    additional content.
                   </p>
                 </div>
                 <div className="card-footer">
