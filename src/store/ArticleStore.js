@@ -2,7 +2,7 @@ import { types, flow } from 'mobx-state-tree';
 
 import { ArticleService } from '../api';
 
-const Author = types.model({
+const Author = types.model('Author', {
   username: types.string,
   bio: types.maybeNull(types.string),
   image: types.string,
@@ -10,7 +10,7 @@ const Author = types.model({
 });
 
 export const Article = types
-  .model({
+  .model('Article', {
     title: types.string,
     slug: types.string,
     body: types.string,
@@ -32,8 +32,8 @@ export const Article = types
   }));
 
 export const ArticleStore = types
-  .model({
-    articles: types.optional(types.array(Article), []),
+  .model('ArticleStore', {
+    articles: types.array(Article),
   })
   .actions(self => {
     function add(item) {

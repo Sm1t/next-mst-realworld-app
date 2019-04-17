@@ -1,6 +1,6 @@
 import { types } from 'mobx-state-tree';
 
-const User = types.model({
+const User = types.model('User', {
   bio: types.string,
   createdAt: types.string,
   email: types.string,
@@ -11,6 +11,6 @@ const User = types.model({
   username: types.string,
 });
 
-export const UserStore = types.model({
+export const UserStore = types.model('UserStore', {
   currentUser: types.maybeNull(User),
 });

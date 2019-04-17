@@ -7,13 +7,9 @@ import AuthStore from './AuthStore';
 let stores = null;
 
 const Store = types
-  .model({
-    articleStore: types.optional(ArticleStore, {
-      articles: [],
-    }),
-    userStore: types.optional(UserStore, {
-      currentUser: null,
-    }),
+  .model('Store', {
+    articleStore: types.optional(ArticleStore, {}),
+    userStore: types.optional(UserStore, {}),
     authStore: types.optional(AuthStore, {}),
   });
 
