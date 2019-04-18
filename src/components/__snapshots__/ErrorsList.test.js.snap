@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorsList should properly render errors list 1`] = `
+<ul
+  className="error-messages"
+>
+  <li
+    key="0"
+  >
+    error one
+  </li>
+  <li
+    key="1"
+  >
+    error two
+  </li>
+</ul>
+`;
+
+exports[`ErrorsList should render without problems 1`] = `
+<ul
+  className="error-messages"
+/>
+`;
