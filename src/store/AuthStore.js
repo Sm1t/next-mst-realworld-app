@@ -20,6 +20,8 @@ const AuthStore = types
       try {
         // eslint-disable-next-line no-unused-vars
         const user = yield AuthService.login(self.email, self.password);
+
+        return user;
       } catch (error) {
         const errors =
           error.response && error.response.data && error.response.data.errors;

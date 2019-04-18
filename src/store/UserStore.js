@@ -11,6 +11,12 @@ const User = types.model('User', {
   username: types.string,
 });
 
-export const UserStore = types.model('UserStore', {
-  currentUser: types.maybeNull(User),
-});
+export const UserStore = types
+  .model('UserStore', {
+    currentUser: types.maybeNull(User),
+  })
+  .actions(self => ({
+    setCurrentUser: user => {
+      self.currentUser = user;
+    },
+  }));

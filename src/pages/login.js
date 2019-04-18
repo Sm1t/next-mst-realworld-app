@@ -11,6 +11,7 @@ const selector = ({
   authStore: {
     email, password, errors, setEmail, setPassword, login,
   },
+  userStore: { setCurrentUser },
 }) => ({
   email,
   password,
@@ -18,26 +19,29 @@ const selector = ({
   setEmail,
   setPassword,
   login,
+  setCurrentUser,
 });
 
 @inject(selector)
 class Login extends Component {
+  onSubmit = event => {
+    const { login, setCurrentUser } = this.props;
+
+    event.preventDefault();
+    login()
+      .then(user => {
+        setCurrentUser(user);
+        Router.replace('/');
+      })
+      .catch(() => {});
+  };
+
+  onChangeEmail = ({ target: { value } }) => this.props.setEmail(value);
+
+  onChangePassword = ({ target: { value } }) => this.props.setPassword(value);
+
   render() {
-    const {
-      email,
-      password,
-      setEmail,
-      setPassword,
-      login,
-      errors,
-    } = this.props;
-    const onSubmit = event => {
-      event.preventDefault();
-      login()
-        .then(() => Router.replace('/'));
-    };
-    const onChangeEmail = ({ target: { value } }) => setEmail(value);
-    const onChangePassword = ({ target: { value } }) => setPassword(value);
+    const { email, password, errors } = this.props;
 
     return (
       <div className="auth-page">
@@ -51,14 +55,14 @@ class Login extends Component {
 
               <ObservableErrorsList errors={errors} />
 
-              <form onSubmit={onSubmit}>
+              <form onSubmit={this.onSubmit}>
                 <fieldset className="form-group">
                   <input
                     className="form-control form-control-lg"
                     type="email"
                     placeholder="Email"
                     value={email}
-                    onChange={onChangeEmail}
+                    onChange={this.onChangeEmail}
                   />
                 </fieldset>
                 <fieldset className="form-group">
@@ -67,7 +71,7 @@ class Login extends Component {
                     type="password"
                     placeholder="Password"
                     value={password}
-                    onChange={onChangePassword}
+                    onChange={this.onChangePassword}
                   />
                 </fieldset>
                 <button className="btn btn-lg btn-primary pull-xs-right">
