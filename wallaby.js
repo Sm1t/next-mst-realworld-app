@@ -1,10 +1,15 @@
 module.exports = wallaby => ({
-  files: ['src/**/*.js', 'src/**/*.snap', '!src/**/*.test.js'],
+  files: [
+    'src/**/*.js',
+    'src/**/*.snap',
+    '!src/**/*.test.js',
+    'setupTests.js',
+  ],
 
   tests: ['src/**/*.test.js'],
 
   compilers: {
-    'src/**/*.js': wallaby.compilers.babel(),
+    '**/*.js': wallaby.compilers.babel(),
   },
 
   testFramework: 'jest',

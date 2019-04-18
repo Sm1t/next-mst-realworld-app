@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ErrorsList = ({ errors }) => (
+const ErrorsList = ({ errors = [] }) => (
   <ul className="error-messages">
     {errors.map((error, index) => (
       <li key={index}>{error}</li>
