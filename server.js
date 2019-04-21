@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const cookieParser = require('cookie-parser');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: './src', dev });
@@ -10,7 +11,9 @@ app
   .then(() => {
     const server = express();
 
-    server.use('/static', express.static('public'));
+    server
+      .use('/static', express.static('public'))
+      .use(cookieParser());
 
     server.get('/article/:slug', (req, res) => {
       const actualPage = '/article';

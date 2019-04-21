@@ -5,6 +5,7 @@ import App, { Container } from 'next/app';
 
 import { initializeStore } from '../store';
 import { Layout } from '../layout';
+import { AuthService } from '../api';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -14,6 +15,11 @@ export default class MyApp extends App {
     //
     const isServer = typeof window === 'undefined';
     const stores = initializeStore(isServer);
+    const token = ctx.req ? ctx.req.cookies.token : AuthService.getToken();
+
+    if (token) {
+      await stores.userStore.checkAuth(token);
+    }
 
     //
     // Check whether the page being rendered by the App has a

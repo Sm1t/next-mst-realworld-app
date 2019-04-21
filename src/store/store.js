@@ -2,7 +2,6 @@ import { types, applySnapshot } from 'mobx-state-tree';
 
 import { ArticleStore } from './ArticleStore';
 import { UserStore } from './UserStore';
-import AuthStore from './AuthStore';
 
 let stores = null;
 
@@ -10,7 +9,6 @@ const Store = types
   .model('Store', {
     articleStore: types.optional(ArticleStore, {}),
     userStore: types.optional(UserStore, {}),
-    authStore: types.optional(AuthStore, {}),
   });
 
 export function initializeStore(isServer, snapshot = null) {
