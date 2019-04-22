@@ -10,6 +10,8 @@ import Link from '../components/Link';
 }))
 class Header extends Component {
   render() {
+    const { currentUser } = this.props;
+
     return (
       <nav className="navbar navbar-light">
         <div className="container">
@@ -22,7 +24,7 @@ class Header extends Component {
                 Home
               </Link>
             </li>
-            {this.props.currentUser ? (
+            {currentUser ? (
               <Fragment>
                 <li className="nav-item">
                   <Link
@@ -42,6 +44,22 @@ class Header extends Component {
                   >
                     <i className="ion-gear-a" />
                     &nbsp;Settings
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    href={`/profile/${currentUser.username}`}
+                    activeClassName="active"
+                  >
+                    {currentUser.image && (
+                      <img
+                        src={currentUser.image}
+                        className="user-pic"
+                        alt=""
+                      />
+                    )}
+                    {currentUser.username}
                   </Link>
                 </li>
               </Fragment>
