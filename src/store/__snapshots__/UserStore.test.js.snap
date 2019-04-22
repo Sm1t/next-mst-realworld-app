@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserStore actions should properly set currentUser 1`] = `
+Object {
+  "currentUser": Object {
+    "bio": "Lorem ipsum dolor sip amet",
+    "createdAt": "2019-03-23T22:28:55.669Z",
+    "email": "test@test.ru",
+    "id": 1,
+    "image": "https://path.to/img",
+    "token": "token",
+    "updatedAt": "2019-04-21T05:01:38.095Z",
+    "username": "test",
+  },
+  "errors": Array [],
+}
+`;
+
+exports[`UserStore should create store without problems 1`] = `
+Object {
+  "currentUser": null,
+  "errors": Array [],
+}
+`;
