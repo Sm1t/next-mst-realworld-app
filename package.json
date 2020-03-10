@@ -69,14 +69,11 @@
     ]
   },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint",
-        "git add"
-      ],
-      "*.css": "stylelint",
-      "*.scss": "stylelint --syntax=scss"
-    }
+    "*.js": [
+      "eslint"
+    ],
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
