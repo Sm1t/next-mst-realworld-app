@@ -1,6 +1,7 @@
 import React from 'react';
 import { inject } from 'mobx-react';
 import marked from 'marked';
+import { sanitize } from 'dompurify';
 
 import { ArticleService } from '../api/article.service';
 import TagList from '../components/TagList';
@@ -17,7 +18,7 @@ const Article = ({
   author: { username, image },
   currentUser,
 }) => {
-  const markup = { __html: marked(body, { sanitize: true }) };
+  const markup = { __html: marked(body, { sanitizer: sanitize }) };
 
   return (
     <div className="article-page">
