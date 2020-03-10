@@ -9,7 +9,7 @@
 # production
 /build
 /dist
-/src/.next
+/.next
 
 # misc
 .DS_Store
