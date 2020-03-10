@@ -1,13 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { inject } from 'mobx-react';
 import { withRouter } from 'next/router';
+import { compose } from 'ramda';
 
 import Link from '../components/Link';
 
-@withRouter
-@inject(stores => ({
+const selector = stores => ({
   currentUser: stores.userStore.currentUser,
-}))
+});
+
 class Header extends Component {
   render() {
     const { currentUser } = this.props;
@@ -92,4 +93,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default compose(withRouter, inject(selector))(Header);

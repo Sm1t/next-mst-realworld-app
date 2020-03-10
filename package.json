@@ -13,6 +13,7 @@
     "mobx-react": "^6.1.8",
     "mobx-state-tree": "^3.14.0",
     "next": "9.3.0",
+    "ramda": "^0.27.0",
     "react": "16.13.0",
     "react-dom": "16.13.0"
   },
@@ -30,13 +31,8 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
-    "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.3.4",
-    "@babel/runtime-corejs2": "^7.3.4",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "babel-eslint": "^10.0.1",

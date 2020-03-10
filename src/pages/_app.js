@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'mobx-react';
 import { getSnapshot } from 'mobx-state-tree';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 
 import { initializeStore } from '../store';
 import { Layout } from '../layout';
@@ -46,13 +46,11 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
-        <Provider {...this.stores}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
-      </Container>
+      <Provider {...this.stores}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
     );
   }
 }

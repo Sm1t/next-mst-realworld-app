@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
+import { compose } from 'ramda';
 
 import ArticlePreview from './ArticlePreview';
 
-@inject(stores => ({ articles: stores.articleStore.articles }))
-@observer
+const selector = stores => ({ articles: stores.articleStore.articles });
+
 class Articles extends Component {
   render() {
     const { articles } = this.props;
@@ -21,4 +22,4 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+export default compose(inject(selector), observer)(Articles);
