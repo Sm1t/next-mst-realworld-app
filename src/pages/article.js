@@ -7,7 +7,9 @@ import { ArticleService } from '../api/article.service';
 import TagList from '../components/TagList';
 import formatDate from '../utils/formatDate';
 
-const selector = stores => ({ currentUser: stores.userStore.currentUser });
+const mapStoreToProps = stores => ({
+  currentUser: stores.userStore.currentUser,
+});
 
 const Article = ({
   title,
@@ -149,4 +151,4 @@ Article.getInitialProps = async context => {
   return article;
 };
 
-export default inject(selector)(Article);
+export default inject(mapStoreToProps)(Article);

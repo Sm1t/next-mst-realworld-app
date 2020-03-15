@@ -5,7 +5,7 @@ import { compose } from 'ramda';
 
 import Link from '../components/Link';
 
-const selector = stores => ({
+const mapStoreToProps = stores => ({
   currentUser: stores.userStore.currentUser,
 });
 
@@ -93,4 +93,4 @@ class Header extends Component {
   }
 }
 
-export default compose(withRouter, inject(selector))(Header);
+export default compose(withRouter, inject(mapStoreToProps))(Header);

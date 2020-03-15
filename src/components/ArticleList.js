@@ -4,7 +4,7 @@ import { compose } from 'ramda';
 
 import ArticlePreview from './ArticlePreview';
 
-const selector = stores => ({ articles: stores.articleStore.articles });
+const mapStoreToProps = stores => ({ articles: stores.articleStore.articles });
 
 class Articles extends Component {
   render() {
@@ -22,4 +22,4 @@ class Articles extends Component {
   }
 }
 
-export default compose(inject(selector), observer)(Articles);
+export default compose(inject(mapStoreToProps), observer)(Articles);
