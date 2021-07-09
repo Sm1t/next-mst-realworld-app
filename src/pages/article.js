@@ -1,15 +1,12 @@
 import React from 'react';
-import { inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import marked from 'marked';
 import { sanitize } from 'dompurify';
 
 import { ArticleService } from '../api/article.service';
 import TagList from '../components/TagList';
 import formatDate from '../utils/formatDate';
-
-const mapStoreToProps = stores => ({
-  currentUser: stores.userStore.currentUser,
-});
+import { useMst } from '../store';
 
 const Article = ({
   title,
@@ -18,8 +15,8 @@ const Article = ({
   createdAt,
   tagList,
   author: { username, image },
-  currentUser,
 }) => {
+  const { userStore: { currentUser } } = useMst()
   const markup = { __html: marked(body, { sanitizer: sanitize }) };
 
   return (
@@ -151,4 +148,4 @@ Article.getInitialProps = async context => {
   return article;
 };
 
-export default inject(mapStoreToProps)(Article);
+export default observer(Article);

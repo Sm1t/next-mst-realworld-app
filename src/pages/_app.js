@@ -1,9 +1,8 @@
 import React from 'react';
-import { Provider } from 'mobx-react';
 import { getSnapshot } from 'mobx-state-tree';
 import App from 'next/app';
 
-import { initializeStore } from '../store';
+import { initializeStore, StoreProvider } from '../store';
 import { Layout } from '../layout';
 import { AuthService } from '../api';
 
@@ -39,18 +38,18 @@ export default class MyApp extends App {
 
   constructor(props) {
     super(props);
-    this.stores = initializeStore(props.isServer, props.initialState);
+    this.stores = initializeStore(typeof window === 'udefined', props.initialState);
   }
 
   render() {
     const { Component, pageProps } = this.props;
 
     return (
-      <Provider {...this.stores}>
+      <StoreProvider stores={this.stores}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </Provider>
+      </StoreProvider>
     );
   }
 }

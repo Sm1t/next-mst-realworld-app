@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
-import { compose } from 'ramda';
+import React from 'react';
+import { observer } from 'mobx-react';
+
+import { useMst } from '../store';
 
 import ArticlePreview from './ArticlePreview';
 
-const mapStoreToProps = stores => ({ articles: stores.articleStore.articles });
+const Articles = () => {
+  const { articleStore: { articles } } = useMst();
 
-class Articles extends Component {
-  render() {
-    const { articles } = this.props;
-
-    return (
-      articles.length > 0 && (
-        <div>
-          {articles.map(article => (
-            <ArticlePreview {...article} key={article.slug} />
-          ))}
-        </div>
-      )
-    );
-  }
+  return (
+    articles.length > 0 && (
+      <div>
+        {articles.map(article => (
+          <ArticlePreview {...article} key={article.slug} />
+        ))}
+      </div>
+    )
+  );
 }
 
-export default compose(inject(mapStoreToProps), observer)(Articles);
+export default observer(Articles);

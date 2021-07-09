@@ -2,7 +2,7 @@
   "env": {
     "jest": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": [
     "prettier",
     "airbnb-base",

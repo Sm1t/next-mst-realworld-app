@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import React from 'react';
 
 const ErrorsList = ({ errors = [] }) => (
@@ -8,4 +9,4 @@ const ErrorsList = ({ errors = [] }) => (
   </ul>
 );
 
-export default ErrorsList;
+export default observer(ErrorsList);

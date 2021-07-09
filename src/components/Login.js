@@ -1,7 +1,6 @@
 import React from 'react';
 
-import ErrorsList from '../containers/ErrorsList';
-
+import ErrorsList from './ErrorsList';
 import Link from './Link';
 
 const Login = ({
