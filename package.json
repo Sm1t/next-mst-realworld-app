@@ -7,7 +7,7 @@
     "classnames": "^2.2.6",
     "cookie-parser": "^1.4.4",
     "dompurify": "^2.0.8",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "js-cookie": "^2.2.0",
     "marked": "^0.8.0",
     "mobx": "^5.9.4",
